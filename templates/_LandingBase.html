@@ -20,7 +20,9 @@
                 </nav>
             </span>
             <span class="content">
-
+                {% block content %}
+                <p class="error">An error has occured in this template. Please contact system admin</p>
+                {% endblock %}
             </span>
         </main>
         <footer>

@@ -28,8 +28,23 @@ def index():
     global thread
     if thread is None:
         thread = sio.start_background_task(background_thread)
-    return render_template('index.html')
+    return render_template('LandingIndex.html')
 
+@app.route('/about')
+def about():
+    return render_template('LandingAbout.html')
+
+@app.route('/news')
+def news():
+    return render_template('LandingNews.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    pass
 
 @sio.event
 def my_event(sid, message):
