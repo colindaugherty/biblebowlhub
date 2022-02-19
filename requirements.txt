@@ -1,2 +1,4 @@
-tornado
-python-socketio
+bidict==0.21.4
+python-engineio==4.3.1
+python-socketio==5.5.2
+tornado==6.1

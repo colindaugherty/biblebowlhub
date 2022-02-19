@@ -6,7 +6,7 @@ import tornado.web
 
 import socketio
 
-define("port", default=5000, help="run on the given port", type=int)
+define("port", default=80, help="run on the given port", type=int)
 define("debug", default=False, help="run in debug mode")
 
 sio = socketio.AsyncServer(async_mode='tornado')
@@ -88,7 +88,7 @@ def main():
     app = tornado.web.Application(
         [
             (r"/", Index),
-            (r"/wordie", Wordie)
+            (r"/wordie", Wordie),
             (r"/socket.io/", socketio.get_tornado_handler(sio)),
         ],
         template_path=os.path.join(os.path.dirname(__file__), "templates"),
